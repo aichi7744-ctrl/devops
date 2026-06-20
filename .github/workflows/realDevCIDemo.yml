@@ -1,0 +1,40 @@
+name: Real Dev CI Demo (Echo Only)
+
+on: 
+    push:
+    pull_request:
+
+jobs:
+    ci-pipeline:
+        runs-on: ubuntu-latest
+
+        steps:
+            # ----------------------------
+            # STEP 1 -> CHECKOUT CODE
+            # ----------------------------
+            - name: Checkout Code
+              uses: actions/checkout@v4
+
+            # ----------------------------
+            # STEP 2 -> INSTALL DEPENENCIES (STIMULATED)
+            # ----------------------------
+            - name: Install Dependencies (Java/Node/Python)
+              run: |
+                echo "Installing Java dependencies -> mvn install"
+                echo "Installing Node depeendencies -> npm install"
+                echo "Installing Python dependencies -> pip install -r requirements.txt"
+                echo "Dependencies Installed"
+
+            # ----------------------------
+            # STEP 2 -> INSTALL DEPENENCIES (STIMULATED)
+            # ----------------------------
+            - name: Lint Code (Stimulated)
+              run: |
+                echo "Running Linter "
+                echo "Simulaating: eslint"
+                echo "Lint result: no isue found"
+
+
+
+
+
